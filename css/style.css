@@ -1,0 +1,16 @@
+ul {
+  list-style: none;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1128px;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
