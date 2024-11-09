@@ -79,8 +79,7 @@ function createHtmlEl(arr) {
           data-source="${item.original}"
           data-alt="${item.description}"
           alt="${item.description}" width="360"
-          onclick="preventDownload(event)"
-        />
+         
       </a>
     </li>`
     )
@@ -88,16 +87,14 @@ function createHtmlEl(arr) {
 }
 console.log(gallery);
 
-function preventDownload(event) {
-  event.preventDefault();
-}
-
 gallery.addEventListener("click", onClick);
 
 function onClick(evt) {
+  evt.preventDefault();
   if (evt.target === evt.currentTarget) {
     return;
   }
+
   console.log(evt.target.dataset);
   const modal = basicLightbox.create(
     `<div class="modal"><img src="${evt.target.dataset.source}" alt="${evt.target.dataset.alt}" /></div>`
